@@ -1,84 +1,65 @@
-// 获取所以的li
-var li = document.querySelectorAll('li');
-//获取input
-var text = document.querySelector('input');
-
+// 获取除退格和清屏的其他按钮
+var li = document.querySelectorAll('li.item');
+// 获取退格
+var back = document.querySelector('.back');
+// 获取清屏
+var clean = document.querySelector('.clean');
+// 获取input的value
+var input = document.querySelector('input');
+// 创建一个空串
 var str = '';
-//绑定单击响应事件
-li[0].onclick = function(){
-    str += li[0].innerHTML;
-    text.value = str;
-}
-li[1].onclick = function(){
-    str += li[1].innerHTML;
-    text.value = str;
-}
-li[2].onclick = function(){
-    str += li[2].innerHTML;
-    text.value = str;
-}
-li[5].onclick = function(){
-    str += li[5].innerHTML;
-    text.value = str;
-}
-li[6].onclick = function(){
-    str += li[6].innerHTML;
-    text.value = str;
-}
-li[7].onclick = function(){
-    str += li[7].innerHTML;
-    text.value = str;
-}
-li[10].onclick = function(){
-    str += li[10].innerHTML;
-    text.value = str;
-}
-li[11].onclick = function(){
-    str += li[11].innerHTML;
-    text.value = str;
-}
-li[12].onclick = function(){
-    str += li[12].innerHTML;
-    text.value = str;
-}
-li[16].onclick = function(){
-    str += li[16].innerHTML;
-    text.value = str;
+// 创建一个空数组
+var arr = [];
+
+// 遍历
+for(let i=0 ; i<li.length ; i++){
+    // 绑定点击效应事件
+    li[i].onclick = function(){
+        /* 判断，数字和点为一类；其他为另一类 */
+        // 如果输入的是数字或点
+        if( this.innerHTML === '.' && input.value === '' ){
+            //
+            input.value = '0.';
+        }else if( !isNaN(this.innerHTML) || this.innerHTML === '.'){
+            
+            if( input.value.indexOf('.') != -1){
+                // 如果已经有小数点了
+
+                if( this.innerHTML != '.'){
+                    // 输入非小数点时
+                    input.value += this.innerHTML;
+                }
+            }else{  // 如果没有小数点
+                input.value += this.innerHTML;
+            }
+        }else if( this.innerHTML != '='){   //输入非等号的其他符合时
+            // 把数字存入数组
+            arr.push(input.value);
+            // 把符号存入数组
+            arr.push(this.innerHTML);
+            // 清屏
+            input.value = '';
+        }else{      // 输入等号
+            // 再把数字存入数组
+            arr.push(input.value);
+            // 计算
+            input.value = eval(arr.join(''));
+            // 清理数组,便于下次计算
+            arr = [];
+        }
+    }
 }
 
-// 运算符
+//退格事件
+back.onclick = function(){
+    input.value = input.value.substr(0 , input.value.length-1)
+}
 
-li[8].onclick = function(){
-    // var reg = new RegExp(/\-|\+|\*|\/|\%/); 
-    // if(text.value.match(reg)){
-    //     text.value = text.value.replace(reg , '+');
-    //     var ret = text.value.replace(reg , '+');
-    // }else{
-        str += li[8].innerHTML;
-        text.value = str;
-    // }   
+//清屏事件
+clean.onclick = function(){
+    arr = [];
+    input.value = '';
 }
-li[9].onclick = function(){
-    str += li[9].innerHTML;
-    text.value = str;
-}
-li[13].onclick = function(){
-    str += li[13].innerHTML;
-    text.value = str;
-}
-li[14].onclick = function(){
-    str += li[14].innerHTML;
-    text.value = str;
-}
-li[18].onclick = function(){
-    str += li[18].innerHTML;
-    text.value = str;
-}
-li[17].onclick = function(){
-    str += li[17].innerHTML;
-    text.value = str;
-}
-li[19].onclick = function(){
-    text.value = eval(text.value);
-}
+
+
 
