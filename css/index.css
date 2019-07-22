@@ -55,12 +55,19 @@ h3{
 }
 input{
     width: 400px;
-    height: 60px;
+    height: 30px;
     outline: none;     /* 设置轮廓不出现 */
     padding-right: 8px;
-    font-size: 20px;
-    font-weight: 700;
     text-align: end;
     border: 0px;
+}
+#txt{
+    font-size: 24px;
+    font-weight: 700;
     border-bottom: 2px solid #cacaca;
+}
+#tc{
+    font-size: 14px;
+    font-weight: normal;
+    opacity: 0.8;
 }
