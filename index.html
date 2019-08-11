@@ -2,48 +2,59 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    <div id="calculator">
-        <!-- title -->
-        <h3>计算器</h3>
-        <!-- 输出框 -->
-        <div class="text">
-            <input type="text" id="tc"><br>
-            <input type="text" id="txt" value="" readonly>
-        </div>
-        <!-- 输入 -->
-        <div class="value">
-            <ul class="clearFix">
-                <li class="ret">±</li>
-                <li class="clean">c</li>
-                <li class="back">⬅</li>
-                <li class="operator">+</li> 
-                <br>
-                <li class="num">7</li>
-                <li class="num">8</li>
-                <li class="num">9</li>
-                <li class="operator">-</li>
-                <br>
-                <li class="num">4</li>
-                <li class="num">5</li>
-                <li class="num">6</li>
-                <li class="operator">*</li>
-                <br>
-                <li class="num">1</li>
-                <li class="num">2</li>
-                <li class="num">3</li>
-                <li class="operator">/</li>
-                <br>
-                <li class="operator">%</li>
-                <li class="num">0</li>
-                <li class="num">.</li>
-                <li class="operator">=</li>
-            </ul>
-        </div>
-    </div>
+<div class="container wrap">
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th colspan="4">计算器</th>
+        </tr>
+        <tr>
+            <th colspan="4">
+                <input type="text" id="tem" readonly>
+                <input readonly id="input" type="text" placeholder="0">
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td id="ret">±</td>
+            <td id="clear">c</td>
+            <td id="back">⬅</td>
+            <td class="operator">+</td>
+        </tr>
+        <tr>
+            <td class="num">7</td>
+            <td class="num">8</td>
+            <td class="num">9</td>
+            <td class="operator">-</td>
+        </tr>
+        <tr>
+            <td class="num">4</td>
+            <td class="num">5</td>
+            <td class="num">6</td>
+            <td class="operator">*</td>
+        </tr>
+        <tr>
+            <td class="num">1</td>
+            <td class="num">2</td>
+            <td class="num">3</td>
+            <td class="operator">/</td>
+        </tr>
+        <tr>
+            <td class="operator">%</td>
+            <td class="num">0</td>
+            <td class="num num_11">.</td>
+            <td class="operator">=</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
     <script src="js/index.js"></script>
 </body>
 </html>
