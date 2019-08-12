@@ -55,3 +55,4 @@ clear.onclick = function () {
     arr = [];
     input.value = '';
 }
+

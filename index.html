@@ -9,11 +9,39 @@
 </head>
 <body>
 <div class="container wrap">
+    <div class="head clearfix">
+        Calculator
+        <div id="headBtn" class="head-left pull-left glyphicon glyphicon-option-horizontal"></div>
+    </div>
+<!--    侧栏-->
+    <div id="opt">
+<!--        侧栏滚动条-->
+        <ul class="list-unstyled">
+            <li id="liFirst"><div class="glyphicon glyphicon-share-alt"></div></li>
+            <li class="li-active">计算器</li>
+            <li class="item">&emsp;标准</li>
+            <li class="item">&emsp;科学</li>
+            <li class="item">&emsp;程序员</li>
+            <li class="item">&emsp;日期计算</li>
+            <li class="li-active">转换器</li>
+            <li class="item">&emsp;货币</li>
+            <li class="item">&emsp;体积</li>
+            <li class="item">&emsp;长度</li>
+            <li class="item">&emsp;重量</li>
+            <li class="item">&emsp;温度</li>
+            <li class="item">&emsp;能量</li>
+            <li class="item">&emsp;面积</li>
+            <li class="item">&emsp;速度</li>
+            <li class="item">&emsp;时间</li>
+            <li class="item">&emsp;功率</li>
+            <li class="item">&emsp;数据</li>
+            <li class="item">&emsp;压力</li>
+            <li class="item">&emsp;角度</li>
+        </ul>
+    </div>
+<!--    main-->
     <table class="table table-bordered">
         <thead>
-        <tr>
-            <th colspan="4">计算器</th>
-        </tr>
         <tr>
             <th colspan="4">
                 <input type="text" id="tem" readonly>
@@ -56,5 +84,6 @@
     </table>
 </div>
     <script src="js/index.js"></script>
+    <script src="js/option.js"></script>
 </body>
 </html>
