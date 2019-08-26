@@ -3,9 +3,9 @@ const opt = document.getElementById('opt');
 const liFirst = document.getElementById('liFirst');
 
 headBtn.onclick = () => {
-    opt.style.display = 'block';
+    opt.style.animation = 'fadeIn 0.5s 1 0s forwards';
 }
 
 liFirst.onclick = function () {
-    opt.style.display = 'none';
+    opt.style.animation = 'fadeOut 0.5s 1 0s reverse backwards';
 }
