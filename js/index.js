@@ -5,6 +5,8 @@ const clear = document.getElementById('clear');                     // 获取清
 const back = document.getElementById('back');                     // 获取退格按钮
 const input = document.getElementById('input');                     // 获取输出文本框
 const tem = document.getElementById('tem');                         // 获取暂存框
+const headBtn = document.getElementById('headBtn');                 // 获取头部按钮
+const opt = document.getElementById('opt');                         // 获取侧栏
 
 let arr = [];       //
 
@@ -55,4 +57,17 @@ clear.onclick = function () {
     arr = [];
     input.value = '';
 }
+
+// 侧栏滑入滑出动画
+headBtn.onclick = () => {
+    if(opt.style.animation === ''){
+        opt.style.animation = 'fadeIn 0.5s 1 0s forwards';
+    }else {
+        opt.style.animation = 'fadeOut 0.5s 1 0s reverse backwards';
+        setTimeout(function () {
+            opt.style.animation = '';
+        },500);
+    }
+}
+
 
