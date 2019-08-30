@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/index.css">
     <style>
     </style>
@@ -13,13 +14,14 @@
 <div class="container wrap">
     <div class="head clearfix">
         Calculator
-        <div id="headBtn" class="head-left pull-left glyphicon glyphicon-option-horizontal"></div>
+        <div id="headBtn" class="headBtn pull-left glyphicon glyphicon-option-horizontal"></div>
+        <span>标准</span>
     </div>
 <!--    侧栏-->
-    <div id="opt">
+    <div id="opt" class="opt">
 <!--        侧栏滚动条-->
         <ul class="list-unstyled">
-            <li id="liFirst"></li>
+            <li></li>
             <li class="li-active">&emsp;计算器</li>
             <li class="item">&emsp;&emsp;<a href="#">标准</a></li>
             <li class="item">&emsp;&emsp;<a href="other/science.html">科学</a></li>
@@ -42,12 +44,12 @@
         </ul>
     </div>
 <!--    main-->
-    <table class="table table-bordered">
+    <table class="table table-bordered text-center">
         <thead>
         <tr>
             <th colspan="4">
-                <input type="text" id="tem" readonly>
-                <input readonly id="input" type="text" placeholder="0">
+                <input type="text" id="tem" class="tem" readonly>
+                <input type="text" id="inOut" class="inOut" placeholder="0" readonly>
             </th>
         </tr>
         </thead>
@@ -79,12 +81,13 @@
         <tr>
             <td class="operator">%</td>
             <td class="num">0</td>
-            <td class="num num_11">.</td>
+            <td class="num point">.</td>
             <td class="operator">=</td>
         </tr>
         </tbody>
     </table>
 </div>
     <script src="js/index.js"></script>
+    <script src="js/common.js"></script>
 </body>
 </html>
