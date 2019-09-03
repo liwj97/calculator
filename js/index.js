@@ -11,6 +11,9 @@ let arr = [];       //
 /* 给数字和小数点绑定点击效应事件 */
 for (let i = 0; i < oNum.length; i++) {
     oNum[i].onclick = function () {
+        if(inOut.value === '0'){
+            inOut.value = this.innerHTML;
+        }else
         // 控制乱输入小数点
         if (this.innerHTML === '.' && inOut.value === '') {
             inOut.value = '0.'
@@ -29,11 +32,17 @@ for (let i = 0; i < oOperator.length; i++) {
     oOperator[i].onclick = function () {
         /* 判断输入等号为一类，其他基本运算符为一类 */
         if (this.innerHTML != '=') {     //输入非等号的符合时
-            arr.push(inOut.value);    // 把数字存入数组
-            arr.push(this.innerHTML);   // 把符号存入数组
-            tem.value = inOut.value + this.innerHTML;  //输入内容添加到暂存框
-            inOut.value = '';     // 清屏
-        } else {      // 输入等号
+            if(inOut.value != ''){
+                arr.push(inOut.value);    // 把数字存入数组
+                arr.push(this.innerHTML);   // 把符号存入数组
+                tem.value = inOut.value + this.innerHTML;  //输入内容添加到暂存框
+                inOut.value = '';     // 清屏
+            }
+            if(tem.value != '' && inOut.value === ''){      // 额，可改变运算符
+                tem.value = arr[0] + this.innerHTML;
+                arr[1] = this.innerHTML;
+            }
+        } else if(this.innerHTML === '='){      // 输入等号
             arr.push(inOut.value);     // 再把数字存入数组
             tem.value = '';      //清空暂存区
             inOut.value = eval(arr.join(''));  // 计算
@@ -54,6 +63,7 @@ back.onclick = function () {
 clear.onclick = function () {
     arr = [];
     inOut.value = '';
+    tem.value = '';
 }
 
 

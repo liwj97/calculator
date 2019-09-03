@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width , initial-scale=1.0">
     <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="../css/science.css">
-    <title>science</title>
+    <link rel="stylesheet" href="../css/conversion.css">
+    <title>bin-dec-oct-hex</title>
 </head>
 <body>
     <div class="container wrap">
@@ -14,9 +14,9 @@
         <div class="head clearfix">
             Calculator
             <div id="headBtn" class="headBtn pull-left glyphicon glyphicon-option-horizontal"></div>
-            <span>科学</span>
+            <span>进制转换</span>
         </div>
-        
+
         <!--    侧栏-->
         <div id="opt" class="opt">
             <!--        侧栏滚动条-->
@@ -43,63 +43,65 @@
                 <li class="item">&emsp;&emsp;角度</li>
             </ul>
         </div>
-        <!--        main-->
+
+<!--        main-->
         <table class="table table-bordered text-center">
             <thead>
-                <th colspan="5">
-                    <input type="text" id="tem" class="tem" readonly>
-                    <input type="text" id="inOut" class="inOut" value="0" readonly>
-                </th>
+                <tr>
+                    <th colspan="5">
+                        <dl class="clearfix">
+                            <dt class="pull-left text-center">HEX</dt>
+                            <dd class="pull-left"></dd>
+                        </dl>
+                        <dl class="clearfix">
+                            <dt class="pull-left text-center">DEC</dt>
+                            <dd class="pull-left"></dd>
+                        </dl>
+                        <dl class="clearfix">
+                            <dt class="pull-left text-center">OCT</dt>
+                            <dd class="pull-left"></dd>
+                        </dl>
+                        <dl class="clearfix">
+                            <dt class="pull-left text-center">BIN</dt>
+                            <dd class="pull-left"></dd>
+                        </dl>
+                    </th>
+                </tr>
             </thead>
             <tbody>
             <tr>
-                <td>√</td>
-                <td>x²</td>
-                <td>x^y</td>
-                <td>10ⁿ</td>
-                <td>log</td>
-            </tr>
-            <tr>
-                <td>↑</td>
-                <td>CE</td>
-                <td id="clear">C</td>
-                <td id="back">←</td>
-                <td class="operator">÷</td>
-            </tr>
-            <tr>
-                <td>π</td>
+                <td>A</td>
+                <td>B</td>
                 <td class="num">7</td>
                 <td class="num">8</td>
                 <td class="num">9</td>
-                <td class="operator">*</td>
             </tr>
             <tr>
-                <td>n!</td>
+                <td>C</td>
+                <td>D</td>
                 <td class="num">4</td>
                 <td class="num">5</td>
                 <td class="num">6</td>
-                <td class="operator">-</td>
             </tr>
             <tr>
-                <td id="ret">±</td>
+                <td>E</td>
+                <td>F</td>
                 <td class="num">1</td>
                 <td class="num">2</td>
                 <td class="num">3</td>
-                <td class="operator">+</td>
             </tr>
             <tr>
-                <td class="num point">(</td>
-                <td class="num point">)</td>
+                <td colspan="2">C</td>
+                <td>⬅</td>
                 <td class="num">0</td>
-                <td class="num point">·</td>
-                <td class="operator">=</td>
+                <td>±</td>
             </tr>
             </tbody>
         </table>
+
     </div>
 
 <script type="text/javascript" src="../js/common.js"></script>
-<script type="text/javascript" src="../js/index.js"></script>
-<script type="text/javascript" src="../js/science.js"></script>
+<script type="text/javascript" src="../js/conversion.js"></script>
 </body>
 </html>

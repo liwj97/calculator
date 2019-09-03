@@ -1,0 +1,20 @@
+/* 侧栏高度 */
+.opt {
+    height: 255px;
+}
+/*输入按钮样式*/
+table tbody tr td {
+    font-size: 16px;
+    width: 80px;
+    height: 40px;
+}
+
+table > thead > tr > th > dl {
+    margin-bottom: 0;
+}
+table > thead > tr > th > dl > dt {
+    width: 30px;
+}
+table > thead > tr > th > dl > dd {
+    margin-left: 10px;
+}
