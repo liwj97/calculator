@@ -8,6 +8,9 @@ const bin = document.getElementById('bin');
 const oct = document.getElementById('oct');
 const dec = document.getElementById('dec');
 const hex = document.getElementById('hex');
+/* 获取清屏 、退格*/
+const clear = document.getElementById('clear');
+const back = document.getElementById('back');
 
 /* 进制转换函数 */
 function dec2(decNum) {     /* 十进制转其他进制 */
@@ -68,7 +71,6 @@ function btnStyle(item) {      /* 可选 */
     }
 }
 
-
 function inputInit() {      /* 初始化input内容 */
     bin.value = '0';
     oct.value = '0';
@@ -97,7 +99,7 @@ conversion(oNum,dec,bin,oct,hex,dec2);  /* 默认以十进制开始（功能） 
 for (let i = 0; i < oDt.length; i++) {
     oDt[i].onclick = function () {
         this.style.borderLeft = '4px solid #b92c28';
-        if (i === 0) {      /* HEX */
+        if (i === 0) {                                  /* HEX */
             borderStyle(1,2,3)
             btnStyle(oLetter);
             btnStyle(oNum2Bin);
@@ -111,13 +113,20 @@ for (let i = 0; i < oDt.length; i++) {
                 hexBtn.push(oLetter[j]);
             }
             conversion(hexBtn,hex,bin,oct,dec,hex2);
-        } else if (i === 1) {    /* DEC */
+            back.onclick = function () {
+                hex.value.length === 1 ? hex.value='0' : hex.value = hex.value.substring(0 , hex.value.length-1);
+            }
+        } else if (i === 1) {                           /* DEC */
             borderStyle(0,2,3);
             noBtnStyle(oLetter);
             btnStyle(oNum);
             inputInit();
             conversion(oNum,dec,bin,oct,hex,dec2);
-        }else if (i === 2) {    /* OCT */
+            // 退格事件
+            back.onclick = function () {
+                dec.value.length === 1 ? dec.value='0' : dec.value = dec.value.substring(0 , dec.value.length-1);
+            }
+        }else if (i === 2) {                         /* OCT */
             borderStyle(0,1,3);
             noBtnStyle(oLetter);
             btnStyle(oNum2Bin);
@@ -129,7 +138,10 @@ for (let i = 0; i < oDt.length; i++) {
             }
             octBtn.splice(1,2);
             conversion(octBtn,oct,bin,dec,hex,oct2);
-        }else if (i === 3) {    /* BIN */
+            back.onclick = function () {
+                oct.value.length === 1 ? oct.value='0' : oct.value = oct.value.substring(0 , oct.value.length-1);
+            }
+        }else if (i === 3) {                                /* BIN */
             borderStyle(0,1,2)
             noBtnStyle(oLetter);
             noBtnStyle(oNum2Bin);
@@ -141,10 +153,19 @@ for (let i = 0; i < oDt.length; i++) {
             binBtn.splice(0 , 6);
             binBtn.splice(1 , 2);
             conversion(binBtn,bin,oct,dec,hex,bin2);
+            // 退格事件
+            back.onclick = function () {
+                bin.value.length === 1 ? bin.value='0' : bin.value = bin.value.substring(0 , bin.value.length-1);
+            }
         }
     }
 }
-
-
-
+// 退格事件
+back.onclick = function () {
+    dec.value.length === 1 ? dec.value='0' : dec.value = dec.value.substring(0 , dec.value.length-1);
+}
+// 清屏事件
+clear.onclick = function () {
+  inputInit();
+}
 

@@ -11,7 +11,7 @@ table tbody tr td {
 .num{
     background-color: #ffffff;
 }
-.letter {
+.letter, .point {
     background-color: rgb(250,251,252);
     color: rgb(200,202,201);
 }
