@@ -1,5 +1,12 @@
-## A SIMPLE CALCULATOR
+# CALCULATOR
+一个简单的计算器
 
-&emsp;Calculator is a common tool in our life. I want to try to write a simple calculator.
+## 目前完成功能
+- 标准
+- 科学
+- 进制转换
+- 日期计算
 
-&emsp; At present, this calculator only implements basic calculation functions and one other mode menu, but other modes are not implemented.
+## 使用方法
+- 单击左上角的三点图标即可呼出其他功能选项。
+ 

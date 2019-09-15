@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/date.css">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <title>date</title>
+</head>
+<body>
+    <div class="container wrap">
+        <div class="head clearfix">
+            Calculator
+            <div id="headBtn" class="headBtn pull-left glyphicon glyphicon-option-horizontal"></div>
+            <span>日期计算</span>
+        </div>
+        <div id="opt" class="opt">
+            <!--        侧栏滚动条-->
+            <ul class="list-unstyled">
+                <li></li>
+                <li class="li-active">&emsp;计算器</li>
+                <li class="item">&emsp;&emsp;<a href="../index.html">标准</a></li>
+                <li class="item">&emsp;&emsp;<a href="science.html">科学</a></li>
+                <li class="item">&emsp;&emsp;<a href="conversion.html">进制转换</a></li>
+                <li class="item">&emsp;&emsp;<a href="date.html">日期计算</a></li>
+                <li class="li-active">&emsp;转换器</li>
+                <li class="item">&emsp;&emsp;货币</li>
+                <li class="item">&emsp;&emsp;体积</li>
+                <li class="item">&emsp;&emsp;长度</li>
+                <li class="item">&emsp;&emsp;重量</li>
+                <li class="item">&emsp;&emsp;温度</li>
+                <li class="item">&emsp;&emsp;能量</li>
+                <li class="item">&emsp;&emsp;面积</li>
+                <li class="item">&emsp;&emsp;速度</li>
+                <li class="item">&emsp;&emsp;时间</li>
+                <li class="item">&emsp;&emsp;功率</li>
+                <li class="item">&emsp;&emsp;数据</li>
+                <li class="item">&emsp;&emsp;压力</li>
+                <li class="item">&emsp;&emsp;角度</li>
+            </ul>
+        </div>
+
+        <div class="container main">
+            <h4>日期之间的相隔时间</h4>
+            <p>From</p>
+            <input type="date" id="start" min="1970-01-01" max="2099-12-31" onchange="fun()">
+            <p>To</p>
+            <input type="date" id="end" min="1970-01-01" max="2099-12-31" onchange="fun()">
+            <p>相隔天数</p>
+            <input type="text" class="text" id="text" value="天数相同" readonly>
+        </div>
+        
+        <script type="text/javascript" src="../js/common.js"></script>
+        <script type="text/javascript" src="../js/date.js"></script>
+    </div>
+</body>
+</html>
