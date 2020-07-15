@@ -1,92 +1,72 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/index.css">
-    <title>Calculator</title>
-</head>
-<body>
-<div class="container wrap">
-    <div class="head clearfix">
-        Calculator
-        <div id="headBtn" class="headBtn pull-left glyphicon glyphicon-option-horizontal"></div>
-        <span>标准</span>
-    </div>
-<!--    侧栏-->
-    <div id="opt" class="opt">
-<!--        侧栏滚动条-->
-        <ul class="list-unstyled">
-            <li></li>
-            <li class="li-active">&emsp;计算器</li>
-            <li class="item">&emsp;&emsp;<a href="index.html">标准</a></li>
-            <li class="item">&emsp;&emsp;<a href="other/science.html">科学</a></li>
-            <li class="item">&emsp;&emsp;<a href="other/conversion.html">进制转换</a></li>
-            <li class="item">&emsp;&emsp;<a href="other/date.html">日期计算</a></li>
-            <li class="li-active">&emsp;转换器</li>
-            <li class="item">&emsp;&emsp;货币</li>
-            <li class="item">&emsp;&emsp;体积</li>
-            <li class="item">&emsp;&emsp;长度</li>
-            <li class="item">&emsp;&emsp;重量</li>
-            <li class="item">&emsp;&emsp;温度</li>
-            <li class="item">&emsp;&emsp;能量</li>
-            <li class="item">&emsp;&emsp;面积</li>
-            <li class="item">&emsp;&emsp;速度</li>
-            <li class="item">&emsp;&emsp;时间</li>
-            <li class="item">&emsp;&emsp;功率</li>
-            <li class="item">&emsp;&emsp;数据</li>
-            <li class="item">&emsp;&emsp;压力</li>
-            <li class="item">&emsp;&emsp;角度</li>
-        </ul>
+<html lang="zh-cmn-Hans">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <link
+      rel="stylesheet"
+      href="http://at.alicdn.com/t/font_1945941_bmnflexyys.css"
+    />
+    <link rel="stylesheet" href="./css/idnex.css" />
+    <link rel="stylesheet" href="./css/QRCode.css" />
+    <title>计算器</title>
+  </head>
+  <body>
+    <!-- 顶部区域 -->
+    <header class="header">
+      <i class="iconfont icon-nav-list"></i>
+      <span>简易计算器</span>
+      <span>标准</span>
+    </header>
+    <main class="main">
+      <!-- 输入框区域 -->
+      <div class="inputBox">
+        <input type="text" id="record" readonly />
+        <input type="text" id="inOrOut" value="0" readonly />
+      </div>
+      <!-- 按键区域 -->
+      <ul class="wrap">
+        <li id="ret">±</li>
+        <li id="clear">c</li>
+        <li id="back">⬅</li>
+        <li class="operator">+</li>
+        <li class="num">7</li>
+        <li class="num">8</li>
+        <li class="num">9</li>
+        <li class="operator">-</li>
+        <li class="num">4</li>
+        <li class="num">5</li>
+        <li class="num">6</li>
+        <li class="operator">*</li>
+        <li class="num">1</li>
+        <li class="num">2</li>
+        <li class="num">3</li>
+        <li class="operator">/</li>
+        <li class="operator">%</li>
+        <li class="num">0</li>
+        <li class="num point">.</li>
+        <li class="operator">=</li>
+      </ul>
+    </main>
+
+    <!-- 弹窗 -->
+    <div id="myModal" class="modal">
+      <!-- 关闭按钮 -->
+      <span
+        class="close"
+        onclick="document.getElementById('myModal').style.display='none'"
+        >&times;</span
+      >
+      <!-- 弹窗内容 -->
+      <img class="modal-content" id="img01" src="" />
+      <!-- 文本描述 -->
+      <div id="caption"></div>
     </div>
 
-<!--    main-->
-    <table class="table table-bordered text-center">
-        <thead>
-        <tr>
-            <th colspan="4">
-                <input type="text" id="tem" class="tem" readonly>
-                <input type="text" id="inOut" class="inOut" value="0" readonly>
-            </th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td id="ret">±</td>
-            <td id="clear">c</td>
-            <td id="back">⬅</td>
-            <td class="operator">+</td>
-        </tr>
-        <tr>
-            <td class="num">7</td>
-            <td class="num">8</td>
-            <td class="num">9</td>
-            <td class="operator">-</td>
-        </tr>
-        <tr>
-            <td class="num">4</td>
-            <td class="num">5</td>
-            <td class="num">6</td>
-            <td class="operator">*</td>
-        </tr>
-        <tr>
-            <td class="num">1</td>
-            <td class="num">2</td>
-            <td class="num">3</td>
-            <td class="operator">/</td>
-        </tr>
-        <tr>
-            <td class="operator">%</td>
-            <td class="num">0</td>
-            <td class="num point">.</td>
-            <td class="operator">=</td>
-        </tr>
-        </tbody>
-    </table>
-</div>
-    <script type="text/javascript" src="js/index.js"></script>
-    <script type="text/javascript" src="js/common.js"></script>
-</body>
+    <script src="./js/index.js"></script>
+    <script src="./js/QRCode.js"></script>
+  </body>
 </html>
