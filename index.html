@@ -6,22 +6,32 @@
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
     />
-    <link
-      rel="stylesheet"
-      href="http://at.alicdn.com/t/font_1945941_bmnflexyys.css"
-    />
-    <link rel="stylesheet" href="./css/idnex.css" />
+    <!-- 引入字体图标样式 -->
+    <link rel="stylesheet" href="./font/iconfont.css" />
+    <!-- 二维码样式 -->
     <link rel="stylesheet" href="./css/QRCode.css" />
+
+    <link rel="stylesheet" href="./css/idnex.css" />
     <title>计算器</title>
   </head>
   <body>
     <!-- 顶部区域 -->
     <header class="header">
-      <i class="iconfont icon-nav-list"></i>
+      <span id="sideBtn" class="iconfont icon-nav-list"></span>
       <span>简易计算器</span>
       <span>标准</span>
     </header>
+    <!-- 内容 -->
     <main class="main">
+      <!-- 侧栏 -->
+      <aside id="aside" class="aside">
+        <ul>
+          <li class="side-title">计算器</li>
+          <li class="side-list"><a href="#">标准</a></li>
+          <li class="side-list"><a href="#">科学</a></li>
+          <li class="side-list"><a href="#">日期转换</a></li>
+        </ul>
+      </aside>
       <!-- 输入框区域 -->
       <div class="inputBox">
         <input type="text" id="record" readonly />
@@ -51,7 +61,6 @@
         <li class="operator">=</li>
       </ul>
     </main>
-
     <!-- 弹窗 -->
     <div id="myModal" class="modal">
       <!-- 关闭按钮 -->
@@ -67,6 +76,9 @@
     </div>
 
     <script src="./js/index.js"></script>
+    <!-- 二维码弹出脚本 -->
     <script src="./js/QRCode.js"></script>
+    <!-- 侧栏脚本 -->
+    <script src="./js/side.js"></script>
   </body>
 </html>

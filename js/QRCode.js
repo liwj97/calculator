@@ -17,8 +17,11 @@ if (
   // 触发弹窗
   modal.style.display = "block";
   //modalImg.src = "/img/calculator.png";
-  modalImg.setAttribute("src", "../img/calculator.png");
-  captionText.innerHTML = "请扫二维码用手机查看";
+  modalImg.setAttribute(
+    "src",
+    "https://i.loli.net/2020/07/17/75GDBTvLpo3s8ju.png"
+  );
+  captionText.innerHTML = "建议使用微信扫二维码查看";
 
   // 当点击 (x), 关闭弹窗
   span.onclick = function () {
